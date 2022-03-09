@@ -14,3 +14,61 @@ a {
 * {
   box-sizing: border-box;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+ol {
+  counter-reset: my-awesome-counter;
+  list-style: none;
+  padding-left: 40px;
+}
+
+ol li {
+  margin: 0 0 1.5rem 2rem;
+  counter-increment: my-awesome-counter;
+  position: relative;
+}
+
+ol li::before {
+  content: counter(my-awesome-counter);
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 35px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 5px;
+  transform: rotate(-10deg);
+  border-radius: 50%;
+  text-align: center;
+}
+
+ol li:nth-child(1)::before {
+  color: gold;
+}
+
+ol li:nth-child(2)::before {
+  color: silver;
+}
+
+ol li:nth-child(3)::before {
+  color: chocolate;
+}
